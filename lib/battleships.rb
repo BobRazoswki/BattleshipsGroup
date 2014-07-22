@@ -6,6 +6,8 @@ class BattleShipsGroup < Sinatra::Base
 
 	set :views, Proc.new { File.join(root, "..", 'views') }
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -19,8 +21,10 @@ class BattleShipsGroup < Sinatra::Base
   end
 
   post '/newgame' do  # POST /newgame HTTP/1.1
-    @player = params[:name]
-    @player = Player.new(name: name, board: Board.new(content: Water.new))
+    name1 = params[:name1]
+    @player1 = Player.new(name: name1, board: Board.new(content: Water.new))
+    name2 = params[:name2]
+    @player2 = Player.new(name: name2, board: Board.new(content: Water.new))
     erb :newgame
    end
 
