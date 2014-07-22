@@ -1,3 +1,7 @@
-<p>Get ready to play...</p>
+<% if @player1.name == ' ' ||  @player2.name == ' ' %>
+	<p>You did not fill one of the names</br> <a href="/newgame"> Go back bitch</a></p>
+<% else %>
+	<p>Get ready to play...</p>
+	<p> Hello <%= @player1.name%> and <%= @player2.name%> </p>
 
-<p> Hello <%= @player1.name%> and <%= @player2.name%> </p>
+<% end %>
