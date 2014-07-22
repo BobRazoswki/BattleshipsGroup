@@ -17,14 +17,14 @@ class BattleShipsGroup < Sinatra::Base
   end
 
  post '/getreadytoplay' do
+    name1 = params[:player1]
+    @player1 = Player.new(name: name1, board: Board.new(content: Water.new))
+    name2 = params[:player2]
+    @player2 = Player.new(name: name2, board: Board.new(content: Water.new))
   	erb :getreadytoplay
   end
 
   post '/newgame' do  # POST /newgame HTTP/1.1
-    name1 = params[:name1]
-    @player1 = Player.new(name: name1, board: Board.new(content: Water.new))
-    name2 = params[:name2]
-    @player2 = Player.new(name: name2, board: Board.new(content: Water.new))
     erb :newgame
    end
 
