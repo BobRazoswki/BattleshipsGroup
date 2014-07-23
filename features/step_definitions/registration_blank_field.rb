@@ -7,7 +7,7 @@ When(/^I register for a new game with no characters in the field$/) do
   click_on 'start new game'
 end
 
-Then(/^I want to see "(.*?)"$/) do |arg1|
-  save_and_open_page
+Then(/^I want to see you need to input a name into each name field$/) do
   expect(page).to have_content "You did not fill one of the names"
 end
+

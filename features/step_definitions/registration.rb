@@ -12,5 +12,5 @@ end
 
 Then(/^I should be on getreadytoplay$/) do
   save_and_open_page
-  # visit '/getreadytoplay'
+ expect(page).to have_content "Get ready to play..."
 end
