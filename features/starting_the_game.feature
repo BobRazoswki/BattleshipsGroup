@@ -21,7 +21,7 @@ Scenario: registration Player
 	When I press "start new game"
 	Then I should be on getreadytoplay
 
-@wip
+
 Scenario: registering player no name given
 	 Given I am on the homepage
 	 When I follow "New Game"

@@ -13,6 +13,7 @@ class BattleShipsGroup < Sinatra::Base
   end
 
 	get '/newgame' do
+    puts 'halo'
     erb :newgame
   end
 
@@ -21,12 +22,17 @@ class BattleShipsGroup < Sinatra::Base
     @player1 = Player.new(name: name1, board: Board.new(content: Water.new))
     name2 = params[:player2]
     @player2 = Player.new(name: name2, board: Board.new(content: Water.new))
+    puts @player1.board.grid
   	erb :getreadytoplay
   end
 
-  post '/newgame' do  # POST /newgame HTTP/1.1
-    erb :newgame
-   end
+post '/newgame' do  # POST /newgame HTTP/1.1
+  erb :newgame
+ end
+
+ get '/startplacingshipplayer1' do  # POST /newgame HTTP/1.1
+  erb :placingshipsplayer1
+ end
 
 
   # start the server if ruby file executed directly

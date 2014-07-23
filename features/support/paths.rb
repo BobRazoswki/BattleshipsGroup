@@ -15,8 +15,11 @@ module NavigationHelpers
     when /newgame/
       '/newgame'
 
-     when /getreadytoplay/
+    when /getreadytoplay/
       '/getreadytoplay'
+
+    when /placingshipsplayer1/
+      '/placingshipsplayer1'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

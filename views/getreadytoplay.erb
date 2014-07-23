@@ -3,5 +3,7 @@
 <% else %>
 	<p>Get ready to play...</p>
 	<p> Hello <%= @player1.name%> and <%= @player2.name%> </p>
-
+	<form method="get" action="/startplacingshipplayer1">
+	<button type="submit" value="start placing ship player1">start placing ship player1</button>
+</form>
 <% end %>
