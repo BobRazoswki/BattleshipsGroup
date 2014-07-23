@@ -1,8 +1,8 @@
-<% if @player1.name == ' ' ||  @player2.name == ' ' %>
+<% if session[:player1].name == ' ' ||  session[:player2].name == ' ' %>
 	<p>You did not fill one of the names</br> <a href="/newgame"> Go back bitch</a></p>
 <% else %>
 	<p>Get ready to play...</p>
-	<p> Hello <%= @player1.name%> and <%= @player2.name%> </p>
+	<p> Hello <%= session[:player1].name%> and <%= session[:player2].name%> </p>
 	<form method="get" action="/startplacingshipplayer1">
 	<button type="submit" value="start placing ship player1">start placing ship player1</button>
 </form>
