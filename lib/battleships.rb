@@ -22,7 +22,7 @@ class BattleShipsGroup < Sinatra::Base
     name2 = params[:player2]
     @player2 = Player.new(name: name2, board: Board.new(content: Water.new))
   	@game = Game.new(player_one: @player1, player_two: @player2)
-    puts @game.inspect
+    # puts @game.inspect
     erb :getreadytoplay
 
   end
