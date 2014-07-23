@@ -21,7 +21,10 @@ class BattleShipsGroup < Sinatra::Base
     @player1 = Player.new(name: name1, board: Board.new(content: Water.new))
     name2 = params[:player2]
     @player2 = Player.new(name: name2, board: Board.new(content: Water.new))
-  	erb :getreadytoplay
+  	@game = Game.new(player_one: @player1, player_two: @player2)
+    puts @game.inspect
+    erb :getreadytoplay
+
   end
 
   post '/newgame' do  # POST /newgame HTTP/1.1
